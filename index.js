@@ -2,12 +2,16 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-// Определение маршрута для GET запроса
-app.get('/hello', (req, res) => {
-  res.send('Hello, World!');
+// Добавьте обработчик для корневого маршрута
+app.get('/', (req, res) => {
+    res.send('Welcome to the Web Practice Application!');
 });
 
-// Запуск сервера
+// Обработчик для /hello
+app.get('/hello', (req, res) => {
+    res.send('Hello, World!');
+});
+
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running at http://localhost:${port}`);
 });
